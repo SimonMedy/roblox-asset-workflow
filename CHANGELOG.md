@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.1.1 — 2026-11-20
+
+- GLB audit automatically creates the destination directory when `--output` is nested.
+- GLB preflight now separates `errors` from non-blocking `warnings`: `--strict` fails only for errors such as over-budget meshes, broken indices and missing local texture files.
+- Scan node TRS scales and matrices for negative/mirrored or non-unit transforms; warn for Studio inspection rather than claiming automatic failure.
+- Strengthened GLB index checking and added synthetic regression tests for CLI strict behavior, output folders, texture availability and transforms.
+- The skill's artistic and quality rules are unchanged; actual Blender/Roblox Studio validation remains necessary.
+
 ## 3.1.0 — 2026-11-20
 
 - Added optional internal magenta vehicle leak test and explicit macro QA on the GAME export geometry.

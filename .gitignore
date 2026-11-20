@@ -1,0 +1,21 @@
+# No build artifacts or private design files should be accidentally published.
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+Thumbs.db
+*.blend
+*.blend1
+*.blend2
+*.fbx
+*.glb
+*.gltf
+*.obj
+*.png
+*.jpg
+*.jpeg
+*.exr
+*.psd
+*.kra
+*.zip
+asset-audit.json

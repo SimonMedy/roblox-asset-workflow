@@ -1,42 +1,40 @@
 # Roblox Asset Workflow — Guide français
 
-Skill universel pour créer des **assets 3D destinés à Roblox** avec Blender et des agents IA : véhicules, environnements, props, UV, skins, pièces interchangeables et exports optimisés. Aucun jeu particulier n'est présupposé ; le style reste libre.
+Skill Agent Skills pour créer et perfectionner des assets Roblox avec Blender, Blender MCP (facultatif) et des agents IA compatibles. **Créativité libre, fidélité aux références, qualité de l'export réel.**
 
-## Installation facile
+## Installation
 
-```powershell
+```bash
 npx skills add SimonMedy/roblox-asset-workflow
 ```
 
-Pour l'installer globalement dans Claude Code, Codex et Gemini CLI :
+Installation globale pour Claude Code, Codex et Gemini CLI :
 
-```powershell
+```bash
 npx skills add SimonMedy/roblox-asset-workflow -g -a claude-code -a codex -a gemini-cli
 ```
 
-Il faut **Node.js** pour `npx`. Une installation alternative propre à Gemini CLI :
+Il faut Node.js et un agent compatible. Blender et ses MCP s'installent séparément.
 
-```powershell
-gemini skills install https://github.com/SimonMedy/roblox-asset-workflow
+## Exigences
+
+- Modèles originaux ou fidèles à tes références ; jamais de modification silencieuse d'une partie validée.
+- Pièces interchangeables, pivots cohérents, UV/masques pour skins et couleurs personnalisées.
+- **20 000 triangles au maximum par mesh individuel importé** ; l'optimisation globale exige aussi des mesures de performance.
+- Profils `HQ` éditable, `GAME` exportable et `MOBILE` facultatif.
+- Inspection rapprochée du **vrai niveau GAME**, pas seulement de la version HQ ; test magenta interne facultatif contre les micro-jours sur véhicules fermés.
+- Préférence pour un matériau par pièce personnalisable. Vérification des UV `[0,1]` destinées aux livrées. Ne pas compter sur les noms de pièces générés automatiquement à l'import.
+- Sauvegardes versionnées et aucun changement automatique des hitboxes ou scripts existants.
+
+## Audits
+
+```bash
+python scripts/validate_skill.py
+python -m unittest discover -s tests -v
+blender -b your_asset.blend --python scripts/audit_blender.py -- --collection Vehicle_GAME --output asset-audit.json
+python scripts/audit_glb.py path/to/Vehicle_GAME.glb --output glb-audit.json
 ```
 
-Ensuite, dis simplement à l'agent : « Utilise `roblox-asset-workflow` et modélise les références jointes dans Blender. » Le MCP Blender ou le MCP Roblox doivent être installés **séparément** ; le skill ne donne pas magiquement accès aux logiciels.
+L'audit Blender exclut les objets masqués par défaut (option `--include-hidden` pour les inclure) et propose `--collection` pour ignorer le décor studio. L'audit `.glb` fonctionne sans Blender. Tous deux sont des contrôles préliminaires : il faut encore vérifier l'import réel dans Roblox Studio, les matériaux, les pivots et les performances sur appareil cible.
 
-## Règles clés
-
-- **Créativité libre** : pas de style imposé, pas de polygones supprimés arbitrairement.
-- **Fidélité aux références** et conservation des parties déjà validées.
-- **Séparation des pièces utiles** : roues indépendantes, pivots cohérents, accessoires démontables et zones recolorables.
-- **Cosmétiques** : UV et masques pour color picker, skins de carrosserie, textures et animations lorsque la technologie le permet.
-- **Limite Roblox** : **20 000 triangles maximum par mesh individuel**, non par voiture entière. Les avatars peuvent avoir des règles plus strictes.
-- **Versions** : HQ `.blend` éditable ; GAME export Roblox ; MOBILE plus léger uniquement si utile.
-- **Tests** : rendus multiangles, vérification du mesh exporté, puis Roblox Studio et appareil réel pour mesurer les performances.
-- **Sauvegardes** : snapshot avant les opérations destructrices.
-
-### Rappel important
-
-Un skin animé complexe ne se fait pas simplement en important un shader Blender dans Roblox : les possibilités d'animation dépendent de l'API Roblox et des appareils ciblés. Le skill prépare la géométrie, les UV et les masques ; la programmation du garage et de ses animations relève du jeu.
-
-## Publication
-
-Lis [`docs/PUBLISHING.md`](docs/PUBLISHING.md). Il explique comment maintenir le dépôt et publier les versions depuis une branche de travail avec Pull Request.
+Consulte [`references/roblox-export.md`](references/roblox-export.md), [`docs/PUBLISHING.md`](docs/PUBLISHING.md) et [`CHANGELOG.md`](CHANGELOG.md).

@@ -29,4 +29,9 @@ VehicleRoot
 - **Physics:** an artist's mesh does not define gameplay hitboxes by default. Only the host integration agent with project context should bind visual models to physics.
 - **Variants:** align HQ / GAME / optional MOBILE at the same dimensions, root orientation, wheel centers and mount positions. Share compatible skin UVs where practical.
 
+## Internal magenta leak test (enclosed vehicles)
+
+- Temporarily make the car interior intensely magenta/emissive or place bright magenta lights inside, darken exterior lighting, and inspect opaque-window seams, A/C pillars, skirts, wheel arches and diffuser from multiple outside angles. Unexpected magenta bleeding through panels reveals possible micro-gaps or flipped faces.
+- Distinguish deliberate vents/transparency from defects. Repeat on **GAME subdivision/export-equivalent geometry**; remove test lights/materials before delivery. This helps find leaks but cannot guarantee complete watertightness.
+
 Before handoff: provide a component inventory and identify which parts are swappable, tintable, emissive, or fixed.

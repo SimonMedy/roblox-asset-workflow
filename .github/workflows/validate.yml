@@ -16,5 +16,7 @@ jobs:
           python-version: '3.12'
       - name: Validate skill files
         run: python scripts/validate_skill.py
-      - name: Check bundled Python scripts compile
-        run: python -m compileall -q scripts
+      - name: Compile Python scripts and tests
+        run: python -m compileall -q scripts tests
+      - name: Test GLB preflight
+        run: python -m unittest discover -s tests -v

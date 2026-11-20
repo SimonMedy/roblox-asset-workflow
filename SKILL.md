@@ -15,11 +15,11 @@ compatibility: Requires an asset creation tool (Blender recommended). Blender MC
 - `LOCK`: Preserve accepted silhouette, dimensions and finished regions through revisions; change only what the user requests or what is demonstrably broken.
 - `PART`: Separate what must move, swap, tint, glow or animate. Name components and set sensible local pivots; do **not** split every fixed decorative detail.
 - `UV`: Prepare usable UVs, editable textures and optional paint masks for future liveries. Never bake replaceable colors or cosmetics irreversibly into geometry.
-- `CLEAN`: Inspect actual rendered output for gaps, shading artifacts, incorrect normals, clipping, z-fighting and unintended openings. Deliberate openings and separate overlapping assemblies are valid.
-- `SAFE`: Before destructive changes, preserve an editable snapshot. Retain approved versions, creation scripts and source textures. Do not overwrite the only copy.
+- `CLEAN`: Inspect rendered output for gaps, shading artifacts, incorrect normals, clipping, z-fighting and unintended openings. Deliberate openings are valid. For enclosed vehicles, use an optional internal magenta light leak test; see vehicles reference.
+- `SAFE`: Before destructive changes, preserve an editable snapshot. Retain approved versions, creation scripts and source textures. Prefer `assets/<name>/versions/v01...` plus `exports/<name>/` outside this skill repo; never overwrite the only copy.
 - `RBX`: **20,000 triangles max per individual imported mesh**, not per entire asset. Leave margin; check each mesh **after modifiers/triangulation**, plus total triangles, mesh/material count and texture costs. This limit alone is **not** a performance target; avatar/UGC rules can be stricter.
 - `VIS`: New models are visual-only unless the host project specifies otherwise. Never silently change established hitboxes, gameplay physics, animation controllers or scripts.
-- `VERIFY`: Inspect multiple views, reimport the export where possible, and assess at gameplay camera scale. State what was actually tested and what still needs Roblox/device validation.
+- `VERIFY`: Inspect the actual **GAME export geometry** at macro and gameplay scale, not only HQ; reimport where possible. State what was tested and what still needs Roblox/device validation.
 
 ## Workflow
 

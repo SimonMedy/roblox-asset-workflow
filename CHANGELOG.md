@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.1.2 — 2026-11-21
+
+- Added precise vehicle finishing guidance based on evaluated GAME Subsurf geometry, one-to-one seams and unexpected internal boundary checks.
+- Added a six-zone macro inspection checklist for headlights, lips/rockers, wheel liners, vents, mirrors and diffuser/reflections.
+- Clarified recessed boost/exhaust/intake cavities, cosmetic tilt baked into vertices and functional VFX mount orientations.
+- Prevented false-positive magenta leak tests by keeping emitters inside liner/underfloor cavities.
+- Added Blender MCP viewport cleanup after Cycles batch renders; `SKILL.md` and audit scripts are unchanged.
+
 ## 3.1.1 — 2026-11-20
 
 - GLB audit automatically creates the destination directory when `--output` is nested.

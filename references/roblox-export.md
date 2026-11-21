@@ -18,6 +18,7 @@ Authoritative baseline: https://create.roblox.com/docs/art/modeling/specificatio
 - **Axes, forward and size:** Blender and Roblox use different coordinate/up conventions. Check export axis transforms, units and imported orientation/size against a test object in Studio; validate wheel rotation and `LookVector`. Do not hardcode one universal `-Y`/`-Z`/meters-to-studs rule across FBX and glTF settings.
 - **UV0 and textures:** make intended livery UVs `[0,1]`, inspect alpha/paint masks, check actual color/normal/roughness/metalness appearance, and ensure textures are embedded or supplied. External texture paths can break when files move.
 - **glTF primitives/extensions:** glTF supports multiple primitives per mesh and optional extensions. Review material splits and extension names; *flag for import testing*, do not declare a specific extension unsupported without a verified platform test.
+- **Blender MCP viewport hygiene:** after Cycles/batch renders in a live Blender session, restore the user's interactive 3D Viewport to its prior workable shading (or `MATERIAL`/`SOLID`) with overlays on; never leave it stuck in Cycles `RENDERED` unintentionally.
 
 ## Output profiles (avoid unnecessary duplicates)
 

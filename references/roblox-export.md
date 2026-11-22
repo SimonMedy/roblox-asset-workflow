@@ -26,6 +26,17 @@ Authoritative baseline: https://create.roblox.com/docs/art/modeling/specificatio
 - `GAME`: Roblox export under the per-mesh budget, geometry/detail appropriate at gameplay distance, stable pivots and cosmetics/UVs. Inspect macro shots using these exact settings.
 - `MOBILE`: optional lower-cost variation; optimize textures, materials, transparency and hidden faces as well as triangles; keep roots/mounts consistent. Custom GAME/MOBILE switching requires game code; Roblox automatic LOD is a different feature.
 
+## Visual & gameplay Pass / Fail gate
+
+Check **the requested asset in context** at match-camera distance, side-by-side with its rarity lineup where relevant, then inspect close-up. Record `PASS`, `FAIL` or `UNVERIFIED` for each applicable criterion; fix confirmed failures before calling the asset finished.
+
+- **FAIL:** silhouette/effect is unreadable, visually noisy, obscures the ball, clashes with the game's camera, or a requested rarity lacks a recognizable identity. Low-tier items should feel finished, not artificially degraded.
+- **FAIL:** visible square sprite edges, broken flipbook transitions or distracting transparent overdraw; inspect actual motion/backgrounds, not just a static concept image.
+- **FAIL:** UV distortion, paint seams, emissive-mask stretch or glow blown out to near-white at the intended lighting/Bloom.
+- **FAIL:** cosmetics alter established collision, gameplay mechanics or mount function without authorization.
+- **UNVERIFIED:** Studio import, concurrent equipped players or mobile/device performance not tested. State exact gaps; never claim production-ready multiplayer/mobile performance from an isolated render. Test a representative scene with the expected player count (e.g. 6–8 only when relevant), not an invented official Roblox cap.
+- **PASS:** only when relevant visible checks and available integration tests actually succeed. Deliver evidence (GAME screenshots/captures, import/audit results, test environment) and a concise unresolved-check list.
+
 ## Optional read-only audits
 
 Choose the relevant export collection rather than counting the studio cyclorama:

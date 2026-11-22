@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.2.0 — 2026-11-22
+
+- Added progressive references for **rarity/art direction**, native Roblox **VFX** and **audio/SFX**; retained the compact `SKILL.md` core and all previous vehicle/geometry rules.
+- Clarified `SurfaceAppearance` emissive mask security (`PluginSecurity`) versus scriptable `EmissiveStrength`/`EmissiveTint`, ColorMap modulation and fixed versus moving patterns.
+- Added 3D/particle/Beam/Trail VFX selection, RGBA/flipbook workflow, measured multiplayer/mobile performance guidance and a single-hero vertical slice.
+- Added a concise export **Visual & gameplay Pass / Fail / Unverified** gate and updated English/French READMEs.
+- No arbitrary particle/draw-call cap or guarantee of Blender/Studio results; Python audit scripts remain unchanged.
+
 ## 3.1.2 — 2026-11-21
 
 - Added precise vehicle finishing guidance based on evaluated GAME Subsurf geometry, one-to-one seams and unexpected internal boundary checks.
@@ -20,8 +28,8 @@
 
 - Added optional internal magenta vehicle leak test and explicit macro QA on the GAME export geometry.
 - Recommended one material per customizable mesh, deliberate part splitting, UV0 within [0,1], and verification of imported hierarchy.
-- Expanded glTF/Roblox pitfalls guidance for emission, axes, scale, UVs, primitives and extensions without imposing unverified importer behavior.
-- Blender audit now supports `--collection` and `--include-hidden`, skips hidden objects by default, and warns about scale, multi-material and UV bounds.
+- Expanded glTF/Roblox pitfalls guidance for emission, axes/scale, UVs, primitives and extensions without imposing unverified importer behavior.
+- Blender audit now supports `--collection` and `--include-hidden`, skips hidden meshes by default, and warns for scale, multi-material and UV bounds.
 - Added dependency-free `.glb` preflight audit plus synthetic unit tests; CI now runs them.
 - Documented asset/version/export directory conventions for safe non-destructive work.
 
@@ -30,6 +38,5 @@
 - Repackaged as a standalone GitHub-ready Agent Skill with cross-agent install instructions.
 - Preserved compact, creative-first core rules and optional progressive references.
 - Added reusable vehicle, skins, environment and other-assets guidance.
-- Clarified Roblox's **per-mesh** 20k-triangle limit and the distinction between HQ / GAME / optional MOBILE.
-- Included a Blender scene audit and a dependency-free skill structure validator.
-- Added GitHub CI, French/English READMEs, publishing guide and MIT license.
+- Clarified Roblox's **per-mesh** 20k-triangle limit and HQ/GAME/optional MOBILE.
+- Included Blender scene audit, dependency-free skill validator, GitHub CI, FR/EN docs and MIT license.

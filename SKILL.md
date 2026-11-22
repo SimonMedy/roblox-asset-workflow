@@ -19,7 +19,7 @@ compatibility: Requires an asset creation tool (Blender recommended). Blender MC
 - `SAFE`: Before destructive changes, preserve an editable snapshot. Retain approved versions, creation scripts and source textures. Prefer `assets/<name>/versions/v01...` plus `exports/<name>/` outside this skill repo; never overwrite the only copy.
 - `RBX`: **20,000 triangles max per individual imported mesh**, not per entire asset. Leave margin; check each mesh **after modifiers/triangulation**, plus total triangles, mesh/material count and texture costs. This limit alone is **not** a performance target; avatar/UGC rules can be stricter.
 - `VIS`: New models are visual-only unless the host project specifies otherwise. Never silently change established hitboxes, gameplay physics, animation controllers or scripts.
-- `VERIFY`: Inspect the actual **GAME export geometry** at macro and gameplay scale, not only HQ; reimport where possible. State what was tested and what still needs Roblox/device validation.
+- `VERIFY`: Inspect the actual **GAME export geometry** at macro and gameplay scale, not only HQ; reimport where possible. Apply the export reference's Pass/Fail gate; report untested Roblox/device checks.
 
 ## Workflow
 
@@ -36,6 +36,9 @@ compatibility: Requires an asset creation tool (Blender recommended). Blender MC
 - Surface skins, colors, animated appearances: [references/skins.md](references/skins.md)
 - Environments / maps: [references/environments.md](references/environments.md)
 - Props, rigs and character-like assets: [references/other-assets.md](references/other-assets.md)
+- Cosmetic rarity / collection art direction: [references/rarity-and-art-direction.md](references/rarity-and-art-direction.md)
+- Native VFX / flipbooks: [references/vfx-roblox.md](references/vfx-roblox.md)
+- SFX / music handoff: [references/audio-sfx.md](references/audio-sfx.md)
 - Export, optimization, profiles, import validation: [references/roblox-export.md](references/roblox-export.md)
 
 ## Optional shorthand
